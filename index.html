@@ -1,0 +1,36 @@
+<html>
+<head>
+    <link rel="stylesheet" href="./notosansjapanese.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="./fontfaceobserver.standalone.js"></script>
+    <script type="text/javascript">
+var font = new FontFaceObserver('Noto Sans Japanese', {
+});
+font.load().then(function() {
+    $('div').css('opacity', 1.0);
+}, function() {
+  console.log('failed');
+}, function() {
+});
+    </script>
+    <style>
+        body {
+        }
+        div {
+            opacity: 0.1;
+        }
+        h1 {
+            font-family: 'Droid Sans';
+        }
+        h2 {
+            font-family: 'Noto Sans Japanese';
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>こんにちは世界</h1>
+        <h2>Hello World</h2>
+    </div>
+</body>
+</html>
