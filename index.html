@@ -8,7 +8,7 @@
 var font = new FontFaceObserver('Noto Sans Japanese', {
 });
 font.load().then(function() {
-    $('div').show();
+    $('#loader').hide();
 }, function() {
   console.log('failed');
 }, function() {
@@ -17,8 +17,13 @@ font.load().then(function() {
     <style>
         body {
         }
-        div {
-            display: none;
+        div#loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, .8)
         }
         h1 {
             font-family: 'Droid Sans';
@@ -29,7 +34,9 @@ font.load().then(function() {
     </style>
 </head>
 <body>
-    <div>
+    <div id="loader">
+    </div>
+    <div id="main">
         <h1>こんにちは世界</h1>
         <h2>Hello World</h2>
     </div>
